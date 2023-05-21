@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+:root {
+    --blue: rgba(37, 82, 123);
+    --white: #fff;
+    --platinum: #E8EBE4;
+    --gray: #BEc1bb;
+    --blue-bell: #A491D2;
+    --soap: #CDC3E6;
+    --pale-lavender: #D4DCFF;
+    --dark-jungle: #1B1F21;
+    --outer-space: #444749;
+    --old-silver: #828485;
+
+    /* Color del fondo segun diseno */
+    --chat-background: rgba(248, 248, 248);
+}
+
+.app {
+    display: grid;
+    grid-template-columns: 1fr 6fr; 
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "navbar navbar"
+        "sidebar products"
+        "footer footer";
+    min-height: 100vh;
+}
+
+.nav {
+    grid-area: navbar;
+    background-color: var(--blue);
+    color: var(--white);
+    justify-content: center;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+/* Sidebar */
+
+.sidebar {
+    background-color: var(--platinum);
+    grid-area: sidebar;
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar li span {
+    color: var(--old-silver);
+}
+
+.products__container {
+    grid-area: products;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 50px;
+
+    background-color: var(--platinum);
+    border-color: var(--gray);
+}
+
+.products__container .product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--white);
+}
+
+.products__container .product:hover {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.products__container .product img {
+    max-height: 300px;
+}
+
+.products__container .product .title {
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.products__container .product .price {
+    font-size: 16px;
+    padding: 10px;
+}
+
+.btn-comprar {
+    background-color: var(--blue);
+    color: var(--white);
+    font-size: 22px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    height: 80px;
+}
